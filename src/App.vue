@@ -4,7 +4,7 @@
       <h1>Hello {{ user.username }}!</h1>
       <input type="text" v-model="roomId">
       <button @click="viewRoom">view room</button>
-      <p>{{ roomInfo }}</p>
+      <table-view v-if="roomInfo" :json-data="roomInfo" :headers="['Room ID', 'Name', 'Card Number']"/>
       <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
@@ -14,13 +14,14 @@
 import '@aws-amplify/ui-vue/styles.css';
 import {Authenticator} from "@aws-amplify/ui-vue";
 import {getUsers} from "../amplify/backend/function/selectUsers/src/selectUsers.js";
+import TableView from "@/components/TableView.vue";
 
 export default {
-  components: {Authenticator},
+  components: {TableView, Authenticator},
   data() {
     return {
       roomId: '',
-      roomInfo: {},
+      roomInfo: [],
     }
   },
   methods: {
@@ -30,7 +31,5 @@ export default {
       });
     }
   }
-
 }
-
 </script>
