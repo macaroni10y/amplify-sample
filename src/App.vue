@@ -19,14 +19,8 @@ export default {
   components: {Authenticator},
   data() {
     return {
-      roomId: {
-        type: String,
-        default: ''
-      },
-      roomInfo: {
-        type: Object,
-        default: {}
-      }
+      roomId: '',
+      roomInfo: {},
     }
   },
   methods: {

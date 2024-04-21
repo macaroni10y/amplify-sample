@@ -1,4 +1,4 @@
-import { get } from 'aws-amplify/api';
+import {get} from 'aws-amplify/api';
 
 export const getUsers = async roomId => {
     try {
@@ -11,8 +11,8 @@ export const getUsers = async roomId => {
                 },
             },
         });
-        const response = await restOperation.response;
-        return response.body.toString();
+        const { body } = await restOperation.response;
+        return await body.json();
     } catch (e) {
         console.log('GET call failed: ', JSON.parse(e.response.body));
     }
