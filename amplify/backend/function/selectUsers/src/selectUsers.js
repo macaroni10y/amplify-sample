@@ -12,7 +12,7 @@ export const getUsers = async roomId => {
             },
         });
         const response = await restOperation.response;
-        return response;
+        return response.body.toString();
     } catch (e) {
         console.log('GET call failed: ', JSON.parse(e.response.body));
     }
