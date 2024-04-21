@@ -17,7 +17,7 @@
         "selectUsers": {
           "secretsPathAmplifyAppId": "d1tj0k5pe2izrg",
           "deploymentBucketName": "amplify-amplifysample-dev-adc28-deployment",
-          "s3Key": "amplify-builds/selectUsers-4e696931742b78703675-build.zip"
+          "s3Key": "amplify-builds/selectUsers-435473767a73356e4530-build.zip"
         }
       },
       "auth": {
