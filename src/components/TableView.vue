@@ -1,15 +1,15 @@
 <template>
   <div>
-    <table>
+    <table class="c-table">
       <thead>
-      <tr>
+      <tr class="c-headers">
         <th v-for="header in headers" :key="header">
           {{ header }}
         </th>
       </tr>
       </thead>
       <tbody>
-      <tr v-for="row in jsonData" :key="row.id">
+      <tr class="c-rows" v-for="row in jsonData" :key="row.id">
         <td>{{ row.roomId }}</td>
         <td>{{ row.name }}</td>
         <td>{{ row.cardNumber }}</td>
@@ -35,14 +35,21 @@ export default {
 };
 </script>
 
-<style>
-table {
+<style scoped>
+.c-table {
   width: 100%;
   border-collapse: collapse;
 }
-th, td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: left;
+.c-headers {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ccc;
+
+}
+.c-rows {
+  border-bottom: 1px solid #ccc;
+}
+td {
+  padding: 10px;
+  text-align: center;
 }
 </style>
