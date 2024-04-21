@@ -24,7 +24,8 @@ exports.handler = async (event) => {
         statusCode: 200,
          headers: {
              "Access-Control-Allow-Origin": "*",
-             "Access-Control-Allow-Headers": "*"
+             "Access-Control-Allow-Headers": "*",
+             "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
          },
         body: JSON.stringify(`Hello from ${event.queryStringParameters.roomId}`),
     };
