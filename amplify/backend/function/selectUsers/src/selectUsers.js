@@ -5,9 +5,11 @@ export const getUsers = async roomId => {
         const restOperation = get({
             apiName: 'api4bbeba31',
             path: '/users',
-            queryParams: {
-                roomId: roomId,
-            }
+            options: {
+                queryParams: {
+                    roomId: roomId,
+                },
+            },
         });
         const response = await restOperation.response;
         return response.data;
